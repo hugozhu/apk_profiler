@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <LinearLayout
+            android:background="#F2A0B4"
+            android:alpha="50"
+            android:id="@+id/Lin"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:gravity="bottom"
+            android:orientation="vertical" >
+
+        <TextView
+                android:id="@+id/title"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:text="======== 体检信息 ========"
+                android:gravity="center_horizontal"
+                android:paddingLeft="10.0dip"
+                android:paddingRight="10.0dip"
+                android:textColor="#000000" />
+
+        <TextView
+                android:id="@+id/cpu"
+                android:text="CPU"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="3dp"
+                android:layout_weight="0.4"
+                android:gravity="right"
+                android:paddingLeft="10.0dip"
+                android:paddingRight="10.0dip"
+                android:textColor="#000000" />
+        <TextView
+                android:id="@+id/mem"
+                android:text="内存"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.4"
+                android:gravity="right"
+                android:paddingLeft="10.0dip"
+                android:paddingRight="10.0dip"
+                android:textColor="#000000" />
+
+        <TextView
+                android:id="@+id/traffic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="3dp"
+                android:layout_weight="0.4"
+                android:gravity="right"
+                android:paddingLeft="10.0dip"
+                android:paddingRight="10.0dip"
+                android:text="流量                               "
+                android:textColor="#000000"/>
+
+
+        <LinearLayout
+                android:background="#F2A0B4"
+                android:id="@+id/Lin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal" >
+            <Button
+                    android:id="@+id/reset"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="重置"
+                    android:textColor="#403A3B"
+                    android:textAlignment="center" android:layout_marginRight="40dp"/>
+
+            <Button
+                    android:id="@+id/close"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="关闭"
+                    android:textColor="#403A3B"
+                    android:textAlignment="center"/>
+
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>
