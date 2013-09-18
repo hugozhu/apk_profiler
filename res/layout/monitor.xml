@@ -6,45 +6,44 @@
               android:layout_height="match_parent">
 
     <LinearLayout
+            android:id="@+id/Lin"
             android:background="#F2A0B4"
             android:alpha="50"
-            android:id="@+id/Lin"
-            android:layout_width="300dp"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:gravity="bottom"
+            android:paddingLeft="10.0dip"
+            android:paddingRight="10.0dip"
             android:orientation="vertical" >
-
-        <TextView
-                android:id="@+id/title"
+        <LinearLayout
+                android:id="@+id/Lin"
+                android:background="#F2A0B4"
+                android:alpha="50"
                 android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="3dp"
-                android:text="======== 体检信息 ========"
                 android:gravity="center_horizontal"
-                android:paddingLeft="10.0dip"
-                android:paddingRight="10.0dip"
-                android:textColor="#000000" />
-
+                android:layout_height="wrap_content"
+                android:layout_margin="10.0dip">
+            <TextView
+                    android:id="@+id/title"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="====== 体检信息 ======"
+                    android:gravity="center_horizontal"
+                    android:textColor="#000000" />
+        </LinearLayout>
         <TextView
                 android:id="@+id/cpu"
                 android:text="CPU"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="3dp"
-                android:layout_weight="0.4"
-                android:gravity="right"
-                android:paddingLeft="10.0dip"
-                android:paddingRight="10.0dip"
+                android:gravity="left"
                 android:textColor="#000000" />
         <TextView
                 android:id="@+id/mem"
                 android:text="内存"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.4"
-                android:gravity="right"
-                android:paddingLeft="10.0dip"
-                android:paddingRight="10.0dip"
+                android:gravity="left"
                 android:textColor="#000000" />
 
         <TextView
@@ -52,13 +51,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="3dp"
-                android:layout_weight="0.4"
-                android:gravity="right"
-                android:paddingLeft="10.0dip"
-                android:paddingRight="10.0dip"
-                android:text="流量                               "
+                android:gravity="left"
+                android:text="流量"
                 android:textColor="#000000"/>
-
 
         <LinearLayout
                 android:background="#F2A0B4"

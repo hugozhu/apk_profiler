@@ -1,13 +1,14 @@
 package com.github.hugozhu.profiler;
 
 import android.app.Activity;
-import android.app.Application;
 import android.app.Service;
 import android.content.*;
 import android.os.Handler;
 import android.os.IBinder;
+import android.util.Log;
 import android.view.*;
 import android.widget.TextView;
+import com.github.hugozhu.profiler.data.App;
 import com.github.hugozhu.profiler.data.CPUInfo;
 import com.github.hugozhu.profiler.data.MemoryInfo;
 import com.github.hugozhu.profiler.data.NetworkInfo;
@@ -23,7 +24,6 @@ public class MonitorService extends Service {
     private TextView txtTraffic;
     private TextView txtCpu;
     private TextView txtMem;
-    private TextView txtBattery;
 
     private Handler handler = new Handler();
     private int uid;
@@ -96,6 +96,8 @@ public class MonitorService extends Service {
                 }
         );
 
+        Log.e(App.TAG, "create floating window");
+
         createFloatingWindow();
 
         handler.postDelayed(task, 1000);
@@ -120,8 +122,6 @@ public class MonitorService extends Service {
     private View floatingView = null;
     private float mTouchStartX;
     private float mTouchStartY;
-    private float startX;
-    private float startY;
     private float x;
     private float y;
 
@@ -134,7 +134,7 @@ public class MonitorService extends Service {
         editor.commit();
         windowManager = (WindowManager) getApplicationContext()
                 .getSystemService("window");
-        wmParams = ((MyApplication) getApplication()).getMywmParams();
+        wmParams = ((ProfilerApplication) getApplication()).getMywmParams();
         wmParams.type = 2002;
         wmParams.flags |= 8;
         wmParams.gravity = Gravity.LEFT | Gravity.TOP;
@@ -150,19 +150,14 @@ public class MonitorService extends Service {
                 y = event.getRawY() - 25;
                 switch (event.getAction()) {
                     case MotionEvent.ACTION_DOWN:
-                        // state = MotionEvent.ACTION_DOWN;
-                        startX = x;
-                        startY = y;
                         mTouchStartX = event.getX();
                         mTouchStartY = event.getY();
                         break;
                     case MotionEvent.ACTION_MOVE:
-                        // state = MotionEvent.ACTION_MOVE;
                         updateViewPosition();
                         break;
 
                     case MotionEvent.ACTION_UP:
-                        // state = MotionEvent.ACTION_UP;
                         updateViewPosition();
                         mTouchStartX = mTouchStartY = 0;
                         break;
@@ -181,13 +176,3 @@ public class MonitorService extends Service {
         windowManager.updateViewLayout(floatingView, wmParams);
     }
 }
-
-class MyApplication extends Application {
-
-    private WindowManager.LayoutParams wmParams = new WindowManager.LayoutParams();
-
-    public WindowManager.LayoutParams getMywmParams() {
-        return wmParams;
-    }
-}
-

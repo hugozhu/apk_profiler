@@ -105,7 +105,7 @@ public class MainActivity extends Activity {
             public void run() {
                 try {
                     Thread.sleep(2000l);
-                    Log.e("hello","send a click");
+                    Log.e(App.TAG,"send a click");
                     inst.sendPointerSync(MotionEvent.obtain(SystemClock.uptimeMillis(),SystemClock.uptimeMillis(), MotionEvent.ACTION_DOWN, 240, 1000, 0));
                     inst.sendPointerSync(MotionEvent.obtain(SystemClock.uptimeMillis(),SystemClock.uptimeMillis(), MotionEvent.ACTION_UP, 240, 1000, 0));
                 } catch (Exception e) {
